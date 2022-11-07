@@ -1,0 +1,15 @@
+// 한 줄로 끊기
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+// 두 줄로 끊기 (호출할 땐 @include (이름)을 작성하면 된다)
+@mixin multiElilipsis($line: 2, $lineHeight: 1.5) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  height: $lineHeight * $line * 1em;
+  line-height: $lineHeight;
+}
